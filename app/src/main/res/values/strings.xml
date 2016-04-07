@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ibis</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">Ibis</string>
+    <string name="title_activity_swipe">Swipe</string>
+    <string name="title_activity_main">Home</string>
+</resources>
