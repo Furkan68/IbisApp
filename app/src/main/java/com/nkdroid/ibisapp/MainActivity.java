@@ -18,12 +18,30 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final ImageButton button = (ImageButton) findViewById(R.id.swipebutton);
-        button.setOnClickListener(new View.OnClickListener() {
+        final ImageButton SwipeButton = (ImageButton) findViewById(R.id.swipebutton);
+        final ImageButton LcButton = (ImageButton) findViewById(R.id.lcbutton);
+        final ImageButton SettingsButton = (ImageButton) findViewById(R.id.settingsbutton);
+
+        SwipeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, SwipeCardsActivity.class);
                 startActivity(i);
             }
         });
+
+        LcButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, LcActivity.class);
+                startActivity(i);
+            }
+        });
+
+        SettingsButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

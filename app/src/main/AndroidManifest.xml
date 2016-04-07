@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.nkdroid.ibisapp.SplashActivity"
+            android:name=".SplashActivity"
             android:label="@string/title_activity_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.nkdroid.ibisapp.SwipeCardsActivity"
-            android:label="@string/title_activity_swipe"></activity>
-
-        <activity android:name="com.nkdroid.ibisapp.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:name=".SwipeCardsActivity"
+            android:label="@string/title_activity_swipe" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" />
+        <activity android:name=".LcActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>
