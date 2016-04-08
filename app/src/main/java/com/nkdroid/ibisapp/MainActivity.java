@@ -2,6 +2,7 @@ package com.nkdroid.ibisapp;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Typeface font = Typeface.createFromAsset(getAssets(), "Helvetica_Light.ttf");
         View view = getLayoutInflater().inflate(R.layout.actionbar,
                 null);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar parent = (Toolbar) view.getParent(); parent.setContentInsetsAbsolute(0, 0);
         TextView t = (TextView) findViewById(R.id.title_text);
         t.setText("Home");
+        t.setTypeface(font);
+
+        ImageButton btn = (ImageButton)findViewById(R.id.abButton);
+        btn.setBackgroundResource(R.drawable.ic_menu_white_36dp);
 
         final ImageButton SwipeButton = (ImageButton) findViewById(R.id.swipebutton);
         final ImageButton LcButton = (ImageButton) findViewById(R.id.lcbutton);

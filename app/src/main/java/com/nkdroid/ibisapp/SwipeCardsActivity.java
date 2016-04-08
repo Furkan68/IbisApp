@@ -2,6 +2,7 @@ package com.nkdroid.ibisapp;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,6 +57,16 @@ public class SwipeCardsActivity extends AppCompatActivity implements FlingCardLi
         Toolbar parent = (Toolbar) view.getParent(); parent.setContentInsetsAbsolute(0, 0);
         TextView t = (TextView) findViewById(R.id.title_text);
         t.setText("My Room");
+        t.setTypeface(font);
+
+        ImageButton btn = (ImageButton)findViewById(R.id.abButton);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(SwipeCardsActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
 
         //this.getSupportActionBar().show();
         al = new ArrayList<>();

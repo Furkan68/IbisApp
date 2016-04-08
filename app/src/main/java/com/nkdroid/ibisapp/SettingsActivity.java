@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Typeface;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -21,6 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
@@ -124,6 +126,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         super.onCreate(savedInstanceState);
         setupActionBar();
 
+        Typeface font = Typeface.createFromAsset(getAssets(), "Helvetica_Light.ttf");
         View view = getLayoutInflater().inflate(R.layout.actionbar,
                 null);
         getSupportActionBar().setDisplayOptions(android.app.ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -131,6 +134,16 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         Toolbar parent = (Toolbar) view.getParent(); parent.setContentInsetsAbsolute(0, 0);
         TextView t = (TextView) findViewById(R.id.title_text);
         t.setText("Settings");
+        t.setTypeface(font);
+
+        ImageButton btn = (ImageButton)findViewById(R.id.abButton);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(SettingsActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     /**
